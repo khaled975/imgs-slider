@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: linear-gradient(to left top ,#031A9A,#8b53ff);
+    position: relative;
+    min-height: 100vh;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    /* overflow: hidden; */
+}
+.slider{
+    gap: 30px;
+    /* max-width: 100%; */
+    display: grid;
+    /* grid-auto-columns: calc((100% / 3) - 20px); */
+    grid-auto-columns:minmax( calc((100% / 3) - 20px) , auto);
+    grid-auto-flow: column;
+    overflow: hidden;
+    /* position: relative; */
+    scroll-behavior: smooth;
+}
+.slider.dragging{
+
+    user-select: none;
+}
+.container{
+    position: relative;
+    max-width: 100%;
+}
+.container i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    z-index: 99;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .06);
+}
+.container i:nth-of-type(1) {
+    left: -25px;
+}
+.container i:nth-of-type(2) {
+    right: -25px;
+}
+/* .slider::before{
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    left: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    content: "\f061";
+    z-index: 99;
+    font-weight: 900;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, .06);
+} */
+.slider .box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 35px 0px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* .slider .box .box-img{
+    width: 100%;
+} */
+.slider .box .img-box img{
+    max-width: 100%;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    /* border: 2px solid mediumorchid; */
+    outline: 3px solid #8853FF;
+    outline-offset: 4px;
+}
+.slider .box p{
+    letter-spacing: 1px;
+    color: #6a6d78;
+    margin: 15px 0;
+}
+@media (max-width:900px) {
+    .slider {
+        grid-auto-columns:minmax( calc((100% / 2) - 20px) , auto);
+    }
+}
+@media (max-width:600px) {
+    .slider {
+        grid-auto-columns:100%;
+    }
+}
