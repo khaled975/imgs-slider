@@ -20,9 +20,9 @@ const drgEnd=()=>{
 }
 function move(e){
     if(e==='right'){
-        slider.scrollLeft+=box + 33
+        slider.scrollLeft+=box + 31
     }else{
-        slider.scrollLeft-=box + 33
+        slider.scrollLeft-=box + 31
 
     }
 }
